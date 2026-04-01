@@ -235,6 +235,35 @@ static void append_default_apps(GsmManager* manager, const char* default_session
 	g_strfreev (default_apps);
 }
 
+static void append_required_apps_add_component (GsmManager* manager, GSettings* settings_required_components, const char* component)
+{
+	char* default_provider;
+
+	default_provider = g_settings_get_string (settings_required_components, component);
+
+	g_debug ("main: %s looking for component: '%s'", component, default_provider);
+
+	if (default_provider != NULL)
+	{
+		char* app_path;
+
+		app_path = gsm_util_find_desktop_file_for_app_name(default_provider, NULL);
+
+		if (app_path != NULL)
+		{
+			gsm_manager_add_autostart_app(manager, app_path, component);
+		}
+		else
+		{
+			g_warning ("Unable to find provider '%s' of required component '%s'", default_provider, component);
+		}
+
+		g_free(app_path);
+	}
+
+	g_free(default_provider);
+}
+
 static void append_required_apps(GsmManager* manager)
 {
 	gchar** required_components;
@@ -257,39 +286,11 @@ static void append_required_apps(GsmManager* manager)
 	{
 		for (i = 0; required_components[i]; i++)
 		{
-			char* default_provider;
-			const char* component;
-
 			if (IS_STRING_EMPTY((char*) required_components[i]))
 			{
 				continue;
 			}
-
-			component = required_components[i];
-
-			default_provider = g_settings_get_string (settings_required_components, component);
-
-			g_debug ("main: %s looking for component: '%s'", component, default_provider);
-
-			if (default_provider != NULL)
-			{
-				char* app_path;
-
-				app_path = gsm_util_find_desktop_file_for_app_name(default_provider, NULL);
-
-				if (app_path != NULL)
-				{
-					gsm_manager_add_autostart_app(manager, app_path, component);
-				}
-				else
-				{
-					g_warning("Unable to find provider '%s' of required component '%s'", default_provider, component);
-				}
-
-				g_free(app_path);
-			}
-
-			g_free(default_provider);
+			append_required_apps_add_component(manager, settings_required_components, required_components[i]);
 		}
 	}
 
