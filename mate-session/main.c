@@ -264,17 +264,18 @@ static void append_required_apps_add_component (GsmManager* manager, GSettings* 
 				const char *default_default_provider;
 				GVariant *schema_default;
 				schema_default = g_settings_get_default_value (settings_required_components, component);
-				default_default_provider = g_variant_get_string (schema_default, NULL);
+					default_default_provider = g_variant_get_string (schema_default, NULL);
 
-				if (default_default_provider[0] != '\0' && strcmp (default_default_provider, default_provider) != 0)
-				{
-					g_warning ("Reset required component '%s' to default", component);
-					g_settings_reset (settings_required_components, component);
+					if (default_default_provider[0] != '\0' && strcmp (default_default_provider, default_provider) != 0)
+					{
+						g_warning ("Reset required component '%s' to default", component);
+						g_settings_reset (settings_required_components, component);
 
-					append_required_apps_add_component(manager, settings_required_components, component, TRUE);
-				}
+						append_required_apps_add_component(manager, settings_required_components, component, TRUE);
+					}
 
-				g_variant_unref (schema_default);
+					g_variant_unref (schema_default);
+				
 			}
 
 		}
