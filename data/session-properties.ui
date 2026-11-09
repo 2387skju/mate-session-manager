@@ -74,6 +74,13 @@
                 <property name="position">0</property>
               </packing>
             </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
             <child>
               <object class="GtkButtonBox" id="vbuttonbox1">
                 <property name="visible">True</property>
@@ -150,13 +157,6 @@
                 <property name="position">1</property>
               </packing>
             </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
         <child>
           <object class="GtkCheckButton" id="session_properties_show_hidden_toggle">
             <property name="label" translatable="yes">_Show hidden</property>
