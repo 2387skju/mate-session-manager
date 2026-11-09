@@ -17,9 +17,9 @@
     <property name="can_focus">False</property>
     <property name="icon_name">text-editor</property>
   </object>
-  <object class="GtkNotebook" id="main-notebook">
+  <object class="GtkBox" id="main-box">
     <property name="visible">True</property>
-    <property name="can_focus">True</property>
+    <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <child>
       <object class="GtkBox" id="vbox1">
@@ -35,7 +35,7 @@
             <property name="label" translatable="yes">Additional startup _programs:</property>
             <property name="use_underline">True</property>
             <property name="mnemonic_widget">session_properties_treeview</property>
-            <property name="xalign">0.029999999329447746</property>
+            <property name="xalign">0</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -176,16 +176,16 @@
         </child>
       </object>
     </child>
-    <child type="tab">
-      <object class="GtkLabel" id="label4">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Startup Programs</property>
-      </object>
-      <packing>
-        <property name="tab_fill">False</property>
-      </packing>
-    </child>
+
+
+
+
+
+
+
+
+
+
     <child>
       <object class="GtkBox" id="vbox3">
         <property name="visible">True</property>
@@ -267,17 +267,17 @@
         <property name="position">1</property>
       </packing>
     </child>
-    <child type="tab">
-      <object class="GtkLabel" id="label5">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Options</property>
-      </object>
-      <packing>
-        <property name="position">1</property>
-        <property name="tab_fill">False</property>
-      </packing>
-    </child>
+
+
+
+
+
+
+
+
+
+
+
   </object>
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">100</property>
