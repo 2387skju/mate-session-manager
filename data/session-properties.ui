@@ -35,7 +35,7 @@
             <property name="label" translatable="yes">Additional startup _programs:</property>
             <property name="use_underline">True</property>
             <property name="mnemonic_widget">session_properties_treeview</property>
-            <property name="xalign">0.029999999329447746</property>
+            <property name="xalign">0</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -85,7 +85,6 @@
           <object class="GtkButtonBox" id="vbuttonbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <property name="layout_style">start</property>
             <child>
@@ -164,14 +163,14 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">4</property>
               </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
-            <property name="position">1</property>
+            <property name="position">3</property>
           </packing>
         </child>
         <child>
@@ -252,7 +251,7 @@
             </child>
           </object>
           <packing>
-            <property name="position">1</property>
+            <property name="position">4</property>
           </packing>
         </child>
       </object>
