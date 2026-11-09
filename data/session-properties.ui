@@ -136,13 +136,6 @@
                 <property name="position">3</property>
               </packing>
             </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
         <child>
           <object class="GtkCheckButton" id="session_properties_show_hidden_toggle">
             <property name="label" translatable="yes">_Show hidden</property>
@@ -158,6 +151,13 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">2</property>
+          </packing>
+        </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">1</property>
           </packing>
         </child>
       </object>
