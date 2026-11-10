@@ -43,6 +43,23 @@
             <property name="position">0</property>
           </packing>
         </child>
+            <child>
+              <object class="GtkCheckButton" id="session_properties_show_hidden_toggle">
+                <property name="label" translatable="yes">_Show hidden</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="valign">end</property>
+                <property name="vexpand">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
         <child>
           <object class="GtkScrolledWindow" id="scrolledwindow1">
             <property name="height_request">210</property>
@@ -134,23 +151,6 @@
                 <property name="expand">False</property>
                 <property name="fill">False</property>
                 <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="session_properties_show_hidden_toggle">
-                <property name="label" translatable="yes">_Show hidden</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="valign">end</property>
-                <property name="vexpand">False</property>
-                <property name="use_underline">True</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
               </packing>
             </child>
           </object>
